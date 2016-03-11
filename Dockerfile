@@ -23,7 +23,7 @@ ENV SIAB_VERSION=2.19 \
 
 USER root
 
-# need fastqc, samtools bwa bowtie picard-tools GATK jre wget git
+# install pre-requisites
 RUN apt-get install -y software-properties-common # && \
     add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu precise universe" && \
     add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu precise main restricted universe multiverse" && \
