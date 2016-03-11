@@ -3,7 +3,7 @@ FROM ubuntu
 MAINTAINER Mark Fernandes <mark.fernandes@ifr.ac.uk>
 
 ENV SIAB_VERSION=2.19 \
-  SIAB_USERCSS=""
+  SIAB_USERCSS="" \
 #  SIAB_USERCSS="Normal:+/etc/shellinabox/options-enabled/00+Black-on-White.css,Reverse:-/etc/shellinabox/options-enabled/00_White-On-Black.css;Colors:+/etc/shellinabox/options-enabled/01+Color-Terminal.css,Monochrome:-/etc/shellinabox/options-enabled/01_Monochrome.css" \
   SIAB_PORT=4200 \
   SIAB_ADDUSER=true \
