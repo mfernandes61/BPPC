@@ -29,7 +29,7 @@ RUN add-apt-repository  "deb http://archive.ubuntu.com/ubuntu precise universe" 
 	add-apt-repository  "deb http://archive.ubuntu.com/ubuntu precise main restricted universe multiverse" && \
 	add-apt-repository  "deb http://archive.ubuntu.com/ubuntu precise-updates main restricted universe multiverse" && \
 	add-apt-repository  "deb http://archive.ubuntu.com/ubuntu precise-backports main restricted universe multiverse" 
-RUN  apt-get update && apt-get install -y git libssl-dev  libpam0g-dev zlib1g-dev dh-autoreconf openssh-client openssl 
+RUN  apt-get update && apt-get install -y build-essential git libssl-dev  libpam0g-dev zlib1g-dev dh-autoreconf openssh-client openssl 
 RUN  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 # pull the shellinabox source & make it
  RUN git clone https://github.com/shellinabox/shellinabox.git
