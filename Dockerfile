@@ -33,9 +33,9 @@ RUN  apt-get update && apt-get install -y build-essential git libssl-dev  libpam
 RUN  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 # pull the shellinabox source & make it
  RUN git clone https://github.com/shellinabox/shellinabox.git
- RUN cd shellinabox 
-# RUN  autoreconf -i 
-# RUN ./configure && make
+ WORKDIR shellinabox 
+ RUN  autoreconf -i 
+ RUN ./configure && make
 
 ADD Welcome.txt /etc/motd
 ADD entrypoint.sh /usr/local/sbin/entrypoint.sh
