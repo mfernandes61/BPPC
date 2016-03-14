@@ -32,7 +32,7 @@ RUN apt-get install -y software-properties-common # && \
 RUN  apt-get update && apt-get -y install git libssl-dev  libpam0g-dev zlib-dev dh-autoreconf openssh-client openssl 
 RUN  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 # pull the shellinabox source & make it
- RUN /usr/bin/git clone https://github.com/shellinabox/shellinabox.git
+ RUN git clone `https://github.com/shellinabox/shellinabox.git`
  RUN cd shellinabox 
  RUN  autoreconf -i 
  RUN ./configure && make
