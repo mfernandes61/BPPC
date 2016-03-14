@@ -34,7 +34,7 @@ RUN  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # pull the shellinabox source & make it
  RUN git clone https://github.com/shellinabox/shellinabox.git
  RUN cd shellinabox 
- RUN  autoreconf -i 
+# RUN  autoreconf -i 
  RUN ./configure && make
 
 ADD Welcome.txt /etc/motd
