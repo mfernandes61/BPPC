@@ -24,8 +24,8 @@ ENV SIAB_VERSION=2.19 \
 USER root
 
 # install pre-requisites
-RUN apt-get install -y software-properties-common && \
-    add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu precise universe" && \
+RUN apt-get install -y software-properties-common 
+RUN add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu precise universe" && \
     add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu precise main restricted universe multiverse" && \
     add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu precise-updates main restricted universe multiverse" && \
     add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu precise-backports main restricted universe multiverse" && \
