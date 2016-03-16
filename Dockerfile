@@ -39,9 +39,9 @@ RUN  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD Welcome.txt /etc/motd
 #ADD entrypoint.sh /usr/local/sbin/entrypoint.sh
-ADD entrypoint.sh entrypoint.sh
+ADD entrypoint.sh /entrypoint.sh
 #RUN chmod +x /usr/local/sbin/entrypoint.sh
-RUN chmod +x entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 EXPOSE 22
 EXPOSE 4200
@@ -54,5 +54,5 @@ VOLUME /etc/shellinabox /var/log/supervisor /home
 #CMD ["shellinabox"]
 
 WORKDIR /
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/bin/bash"]
