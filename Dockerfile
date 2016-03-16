@@ -32,16 +32,16 @@ RUN add-apt-repository  "deb http://archive.ubuntu.com/ubuntu precise universe" 
 RUN  apt-get update && apt-get install -y build-essential git libssl-dev  libpam0g-dev zlib1g-dev dh-autoreconf openssh-client openssl 
 RUN  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 # pull the shellinabox source & make it
- RUN git clone https://github.com/shellinabox/shellinabox.git
- WORKDIR shellinabox 
- RUN  autoreconf -i 
- RUN ./configure && make
-
+RUN git clone https://github.com/shellinabox/shellinabox.git
+WORKDIR shellinabox 
+RUN  autoreconf -i 
+RUN ./configure && make
+RUN mkdir /scripts
 ADD Welcome.txt /etc/motd
 #ADD entrypoint.sh /usr/local/sbin/entrypoint.sh
-ADD entrypoint.sh /entrypoint.sh
+ADD entrypoint.sh /scripts/entrypoint.sh
 #RUN chmod +x /usr/local/sbin/entrypoint.sh
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /scripts/entrypoint.sh
 
 EXPOSE 22
 EXPOSE 4200
@@ -54,5 +54,5 @@ VOLUME /etc/shellinabox /var/log/supervisor /home
 #CMD ["shellinabox"]
 
 WORKDIR /
-ENTRYPOINT ["/entrypoint.sh"]
+# ENTRYPOINT ["/scripts/entrypoint.sh"]
 CMD ["/bin/bash"]
