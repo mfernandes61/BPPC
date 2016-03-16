@@ -1,5 +1,4 @@
 FROM ubuntu
-
 MAINTAINER Mark Fernandes <mark.fernandes@ifr.ac.uk>
 
 ENV SIAB_VERSION=2.19 \
@@ -19,7 +18,6 @@ ENV SIAB_VERSION=2.19 \
   SIAB_SERVICE=/:LOGIN \
   SIAB_PKGS=none \
   SIAB_SCRIPT=none
-
 
 USER root
 
@@ -54,5 +52,5 @@ VOLUME /etc/shellinabox /var/log/supervisor /home
 #CMD ["shellinabox"]
 
 WORKDIR /scripts
-ENTRYPOINT ["entrypoint.sh"]
+#ENTRYPOINT ["entrypoint.sh"]
 CMD ["/bin/bash"]
