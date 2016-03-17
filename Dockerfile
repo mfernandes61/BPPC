@@ -45,12 +45,14 @@ EXPOSE 22
 EXPOSE 4200
 	
 #USER ngsintro
-
+RUN useradd --create-home --shell /bin/bash --user-group --uid 1000 --groups sudo $SIAB_USER && \
+    echo `echo $SIAB_USER"\n"$SIAB_USER"\n" | passwd $SIAB_PASSWORD`
 
 VOLUME /etc/shellinabox /var/log/supervisor /home
 # ENTRYPOINT ["/usr/local/sbin/entrypoint.sh"]
 #CMD ["shellinabox"]
 
-WORKDIR /scripts
+WORKDIR /shellinabox
+RUN shellinaboxd -t -b
 #ENTRYPOINT ["entrypoint.sh"]
 CMD ["/bin/bash"]
