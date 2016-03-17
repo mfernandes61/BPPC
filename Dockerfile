@@ -32,7 +32,7 @@ RUN  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # pull the shellinabox source & make it
 RUN git clone https://github.com/shellinabox/shellinabox.git
 WORKDIR shellinabox 
-RUN  autoreconf -i && ./configure && make && PATH=$PATH:/shellinabox
+RUN  autoreconf -i && ./configure && make && make install
 RUN mkdir /scripts
 ADD Welcome.txt /etc/motd
 #ADD entrypoint.sh /usr/local/sbin/entrypoint.sh
@@ -55,4 +55,4 @@ VOLUME /etc/shellinabox /var/log/supervisor /home
 #RUN ./shellinaboxd -t -b
 # ENTRYPOINT ["./shellinabox/shellinaboxd -t -b"]
 #CMD ["/bin/bash"]
-CMD ./shellinabox/shellinaboxd -t -b
+CMD ["shellinaboxd -t -b"]
