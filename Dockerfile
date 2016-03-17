@@ -32,8 +32,7 @@ RUN  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # pull the shellinabox source & make it
 RUN git clone https://github.com/shellinabox/shellinabox.git
 WORKDIR shellinabox 
-RUN  autoreconf -i 
-RUN ./configure && make
+RUN  autoreconf -i && ./configure && make && PATH=$PATH:/shellinabox
 RUN mkdir /scripts
 ADD Welcome.txt /etc/motd
 #ADD entrypoint.sh /usr/local/sbin/entrypoint.sh
