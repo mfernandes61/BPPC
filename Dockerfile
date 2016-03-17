@@ -52,7 +52,7 @@ VOLUME /etc/shellinabox /var/log/supervisor /home
 # ENTRYPOINT ["/usr/local/sbin/entrypoint.sh"]
 #CMD ["shellinabox"]
 
-WORKDIR /shellinabox
-RUN ./shellinaboxd -t -b
-#ENTRYPOINT ["entrypoint.sh"]
+#WORKDIR /shellinabox
+#RUN ./shellinaboxd -t -b
+ENTRYPOINT ["/shellinabox/shellinaboxd -t -b"]
 CMD ["/bin/bash"]
