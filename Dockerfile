@@ -58,5 +58,5 @@ VOLUME /etc/shellinabox /var/log/supervisor /home
 
 #RUN $SIAB_COMM
 #ENTRYPOINT ["/usr/local/bin/shellinaboxd"]
-# CMD ["/bin/bash"]
-CMD  ["shellinaboxd", " -t"," -b"]
+CMD ["/bin/bash"]
+#CMD  ["shellinaboxd", " -t"," -b"]
