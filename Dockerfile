@@ -56,6 +56,6 @@ WORKDIR /shellinabox
 #RUN exec /shellinabox/shellinaboxd -t -b
 
 #RUN ./shellinaboxd -t -b
-ENTRYPOINT ["/usr/local/bin/shellinaboxd"]
+#ENTRYPOINT ["/usr/local/bin/shellinaboxd"]
 #CMD ["/bin/bash"]
-CMD  ["/bin/bash"]
+CMD  ["/usr/local/bin/shellinaboxd"]
