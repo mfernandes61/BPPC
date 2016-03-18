@@ -37,8 +37,9 @@ RUN  autoreconf -i && ./configure && make && make install
 ADD Welcome.txt /etc/motd
 RUN mkdir /scripts
 ADD entrypoint.sh /scripts/entrypoint.sh
+ADD launchsiab.sh /scripts/launchsiab.sh
 #RUN chmod +x /usr/local/sbin/entrypoint.sh
-RUN chmod +x /scripts/entrypoint.sh
+RUN chmod +x /scripts/entrypoint.sh && chmod +x /scripts/launchsiab.sh
 #RUN echo "@reboot root /usr/local/bin/shellinaboxd -t -b &" >> /etc/crontab
 #RUN /usr/local/bin/shellinaboxd -t -b &
 EXPOSE 22
@@ -57,6 +58,6 @@ ENTRYPOINT ["/scripts/entrypoint.sh"]
 #RUN exec /shellinabox/shellinaboxd -t -b
 
 #RUN $SIAB_COMM
-#ENTRYPOINT ["/usr/local/bin/shellinaboxd"]
+ENTRYPOINT ["/scripts/launchsiab.sh"]
 CMD ["/bin/bash"]
 #CMD  ["shellinaboxd", " -t"," -b"]
