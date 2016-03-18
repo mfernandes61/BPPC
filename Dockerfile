@@ -40,7 +40,7 @@ ADD entrypoint.sh /scripts/entrypoint.sh
 #RUN chmod +x /usr/local/sbin/entrypoint.sh
 RUN chmod +x /scripts/entrypoint.sh
 #RUN echo "@reboot root /usr/local/bin/shellinaboxd -t -b &" >> /etc/crontab
-RUN /usr/local/bin/shellinaboxd -t -b &
+#RUN /usr/local/bin/shellinaboxd -t -b &
 EXPOSE 22
 EXPOSE 4200
 	
@@ -49,7 +49,7 @@ RUN useradd --create-home --shell /bin/bash --user-group --uid 1000 --groups sud
     echo `echo $SIAB_USER"\n"$SIAB_USER"\n" | passwd $SIAB_PASSWORD`
 
 VOLUME /etc/shellinabox /var/log/supervisor /home
-#ENTRYPOINT ["/usr/local/sbin/entrypoint.sh"]
+ENTRYPOINT ["/scripts/entrypoint.sh"]
 #CMD ["shellinabox"]
 
 #WORKDIR /shellinabox
