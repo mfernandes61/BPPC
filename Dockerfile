@@ -34,14 +34,14 @@ RUN  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN git clone https://github.com/shellinabox/shellinabox.git
 WORKDIR shellinabox 
 RUN  autoreconf -i && ./configure && make && make install
-RUN mkdir /scripts
 ADD Welcome.txt /etc/motd
 #ADD entrypoint.sh /usr/local/sbin/entrypoint.sh
+RUN mkdir /scripts
 ADD entrypoint.sh /scripts/entrypoint.sh
 #RUN chmod +x /usr/local/sbin/entrypoint.sh
 RUN chmod +x /scripts/entrypoint.sh
-RUN echo "@reboot root /usr/local/bin/shellinaboxd -t -b &" >> /etc/crontab
-
+#RUN echo "@reboot root /usr/local/bin/shellinaboxd -t -b &" >> /etc/crontab
+RUN /usr/local/bin/shellinaboxd -t -b &
 EXPOSE 22
 EXPOSE 4200
 	
