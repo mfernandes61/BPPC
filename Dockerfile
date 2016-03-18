@@ -40,7 +40,7 @@ ADD Welcome.txt /etc/motd
 ADD entrypoint.sh /scripts/entrypoint.sh
 #RUN chmod +x /usr/local/sbin/entrypoint.sh
 RUN chmod +x /scripts/entrypoint.sh
-RUN echo "@reboot root /usr/local/bin/shellinaboxd -t -b" >> /etc/crontab
+RUN echo "@reboot root /usr/local/bin/shellinaboxd -t -b &" >> /etc/crontab
 
 EXPOSE 22
 EXPOSE 4200
