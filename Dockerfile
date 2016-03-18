@@ -55,4 +55,4 @@ VOLUME /etc/shellinabox /var/log/supervisor /home
 #RUN ./shellinaboxd -t -b
 # ENTRYPOINT ["./shellinabox/shellinaboxd -t -b"]
 #CMD ["/bin/bash"]
-CMD ["shellinaboxd -t -b"]
+CMD ["shellinaboxd", "-t",  "-b"]
