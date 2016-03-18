@@ -56,7 +56,7 @@ WORKDIR /shellinabox
 #ENTRYPOINT ["/shellinabox/shellinaboxd-t -b"]
 #RUN exec /shellinabox/shellinaboxd -t -b
 
-RUN $SIAB_COMM
+#RUN $SIAB_COMM
 #ENTRYPOINT ["/usr/local/bin/shellinaboxd"]
 CMD ["/bin/bash"]
 #CMD  [$SIAB_COMM]
