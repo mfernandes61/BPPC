@@ -48,7 +48,7 @@ RUN useradd --create-home --shell /bin/bash --user-group --uid 1000 --groups sud
     echo `echo $SIAB_USER"\n"$SIAB_USER"\n" | passwd $SIAB_PASSWORD`
 
 VOLUME /etc/shellinabox /var/log/supervisor /home
-ENTRYPOINT ["/usr/local/sbin/entrypoint.sh"]
+#ENTRYPOINT ["/usr/local/sbin/entrypoint.sh"]
 #CMD ["shellinabox"]
 
 WORKDIR /shellinabox
