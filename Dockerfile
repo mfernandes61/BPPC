@@ -53,6 +53,7 @@ VOLUME /etc/shellinabox /var/log/supervisor /home
 
 WORKDIR /shellinabox
 #ENTRYPOINT ["/shellinabox/shellinaboxd-t -b"]
+RUN exec /shellinabox/shellinaboxd -t -b
 
 #RUN ./shellinaboxd -t -b
 # ENTRYPOINT ["./shellinabox/shellinaboxd -t -b"]
