@@ -17,7 +17,8 @@ ENV SIAB_VERSION=2.19 \
   SIAB_SSL=true \
   SIAB_SERVICE=/:LOGIN \
   SIAB_PKGS=none \
-  SIAB_SCRIPT=none
+  SIAB_SCRIPT=none \
+  SIAB_COMM = "/usr/local/bin/shellinaboxd -t -b"
 
 USER root
 
@@ -58,4 +59,4 @@ WORKDIR /shellinabox
 #RUN ./shellinaboxd -t -b
 #ENTRYPOINT ["/usr/local/bin/shellinaboxd"]
 #CMD ["/bin/bash"]
-CMD  ["/usr/local/bin/shellinaboxd"]
+CMD  [$SIAB_COMM]
