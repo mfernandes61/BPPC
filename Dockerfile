@@ -18,7 +18,7 @@ ENV SIAB_VERSION=2.19 \
   SIAB_SERVICE=/:LOGIN \
   SIAB_PKGS=none \
   SIAB_SCRIPT=none \
-  SIAB_COMM = "/usr/local/bin/shellinaboxd -t -b"
+  SIAB_COMM="/usr/local/bin/shellinaboxd -t -b"
 
 USER root
 
@@ -52,7 +52,7 @@ VOLUME /etc/shellinabox /var/log/supervisor /home
 #ENTRYPOINT ["/usr/local/sbin/entrypoint.sh"]
 #CMD ["shellinabox"]
 
-WORKDIR /shellinabox
+#WORKDIR /shellinabox
 #ENTRYPOINT ["/shellinabox/shellinaboxd-t -b"]
 #RUN exec /shellinabox/shellinaboxd -t -b
 
