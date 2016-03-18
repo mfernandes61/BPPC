@@ -35,7 +35,6 @@ RUN git clone https://github.com/shellinabox/shellinabox.git
 WORKDIR shellinabox 
 RUN  autoreconf -i && ./configure && make && make install
 ADD Welcome.txt /etc/motd
-#ADD entrypoint.sh /usr/local/sbin/entrypoint.sh
 RUN mkdir /scripts
 ADD entrypoint.sh /scripts/entrypoint.sh
 #RUN chmod +x /usr/local/sbin/entrypoint.sh
@@ -59,5 +58,5 @@ VOLUME /etc/shellinabox /var/log/supervisor /home
 
 #RUN $SIAB_COMM
 #ENTRYPOINT ["/usr/local/bin/shellinaboxd"]
-CMD ["/bin/bash"]
-#CMD  [$SIAB_COMM]
+# CMD ["/bin/bash"]
+CMD  ["shellinaboxd", " -t"," -b"]
