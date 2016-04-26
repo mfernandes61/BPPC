@@ -23,9 +23,9 @@ ENV SIAB_VERSION=2.19 \
 USER root
 
 # install pre-requisites
-#RUN apt-get install -y software-properties-common
-RUN apt-get install -y python-software-properties
-RUN add-apt-repository  "deb http://archive.ubuntu.com/ubuntu precise universe" && \
+# RUN apt-get install -y python-software-properties
+RUN apt-get update && apt-get install -y software-properties-common && \
+add-apt-repository  "deb http://archive.ubuntu.com/ubuntu precise universe" && \
 	add-apt-repository  "deb http://archive.ubuntu.com/ubuntu precise main restricted universe multiverse" && \
 	add-apt-repository  "deb http://archive.ubuntu.com/ubuntu precise-updates main restricted universe multiverse" && \
 	add-apt-repository  "deb http://archive.ubuntu.com/ubuntu precise-backports main restricted universe multiverse" 
