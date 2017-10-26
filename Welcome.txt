@@ -1,4 +1,4 @@
-Welcome to the IFR Dockerised version of the Welsh Genepark's 
+Welcome to the QIB Dockerised version of the Welsh Genepark's 
 Introduction to Command-line NGS Analysis course!
 The original materials belong to Wesh Genepark and the original
 materials and software can be found at
